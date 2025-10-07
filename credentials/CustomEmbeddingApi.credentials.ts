@@ -30,7 +30,7 @@ export class CustomEmbeddingApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				Authorization: 'Bearer {{$credentials.apiKey}}',
+				Authorization: '={{ $credentials.apiKey ? "Bearer " + $credentials.apiKey : undefined }}',
 			},
 		},
 	};

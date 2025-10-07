@@ -1,6 +1,6 @@
 {
 	"name": "@ralphcrisostomo/n8n-nodes-custom-embedding",
-	"version": "0.0.17",
+	"version": "0.0.40",
 	"description": "Custom Embedding node for OpenAI-compatible APIs (NIM, vLLM, Ollama, etc.)",
 	"keywords": [
 		"n8n-community-node-package",
