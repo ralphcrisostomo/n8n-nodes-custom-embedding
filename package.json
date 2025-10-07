@@ -1,0 +1,66 @@
+{
+	"name": "n8n-nodes-custom-embedding",
+	"version": "0.0.1",
+	"description": "Custom Embedding node for OpenAI-compatible APIs (NIM, vLLM, Ollama, etc.)",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"workflow",
+        "embedding",
+        "vector",
+        "qdrant",
+        "openai",
+        "llm",
+        "nim"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/ralphcrisostomo/n8n-nodes-custom-embedding",
+	"author": {
+		"name": "Ralf Crisostomo",
+		"email": "rrecrisostomo@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ralphcrisostomo/n8n-nodes-custom-embedding.git"
+	},
+	"engines": {
+		"node": ">=20.15"
+	},
+	"main": "index.js",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"pretty": "prettier --write --list-different .",
+		"build": "npx rimraf dist && tsc && gulp build:icons",
+		"dev": "tsc --watch",
+		"format": "prettier nodes credentials --write",
+		"lint": "eslint nodes credentials package.json",
+		"lintfix": "eslint nodes credentials package.json --fix",
+		"prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
+	},
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"credentials": [
+			"dist/credentials/OpenAICompatAPI.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/CustomEmbedding/CustomEmbedding.node.js"
+		]
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	},
+	"dependencies": {
+		"rimraf": "^6.0.1"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.30",
+		"@typescript-eslint/parser": "~8.32.0",
+		"eslint": "^8.57.0",
+		"eslint-plugin-n8n-nodes-base": "^1.16.3",
+		"gulp": "^5.0.0",
+		"prettier": "^3.5.3",
+		"typescript": "^5.8.2"
+	}
+}
