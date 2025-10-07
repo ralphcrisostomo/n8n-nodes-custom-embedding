@@ -1,17 +1,17 @@
 {
-	"name": "n8n-nodes-custom-embedding",
-	"version": "0.0.1",
+	"name": "@ralphcrisostomo/n8n-nodes-custom-embedding",
+	"version": "0.0.17",
 	"description": "Custom Embedding node for OpenAI-compatible APIs (NIM, vLLM, Ollama, etc.)",
 	"keywords": [
 		"n8n-community-node-package",
 		"n8n",
 		"workflow",
-        "embedding",
-        "vector",
-        "qdrant",
-        "openai",
-        "llm",
-        "nim"
+		"embedding",
+		"vector",
+		"qdrant",
+		"openai",
+		"llm",
+		"nim"
 	],
 	"license": "MIT",
 	"homepage": "https://github.com/ralphcrisostomo/n8n-nodes-custom-embedding",
@@ -42,7 +42,7 @@
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"credentials": [
-			"dist/credentials/OpenAICompatAPI.credentials.js"
+			"dist/credentials/CustomEmbeddingApi.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/CustomEmbedding/CustomEmbedding.node.js"
@@ -52,6 +52,7 @@
 		"n8n-workflow": "*"
 	},
 	"dependencies": {
+		"@langchain/openai": "^0.6.14",
 		"rimraf": "^6.0.1"
 	},
 	"devDependencies": {
